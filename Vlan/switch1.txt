@@ -1,0 +1,198 @@
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/3, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/5, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/6, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/7, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/8, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/8, changed state to up
+
+
+Switch>en
+Switch#conf
+Switch#configure t
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#v
+Switch(config)#vlan 10 name HR
+                       ^
+% Invalid input detected at '^' marker.
+	
+Switch(config)#vlan 10
+Switch(config-vlan)#name HR
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#name IT
+Switch(config-vlan)#exit
+Switch(config)#int
+Switch(config)#interface r
+Switch(config)#interface range f
+Switch(config)#interface range fastEthernet 0/3-5
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport m
+Switch(config-if-range)#switchport mode a
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport a
+Switch(config-if-range)#switchport access v
+Switch(config-if-range)#switchport access vlan 10
+Switch(config-if-range)#exit
+Switch(config)#int
+Switch(config)#interface r
+Switch(config)#interface range f
+Switch(config)#interface range fastEthernet 0/6-8
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport m
+Switch(config-if-range)#switchport mode a
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport a
+Switch(config-if-range)#switchport access v
+Switch(config-if-range)#switchport access vlan 20
+Switch(config-if-range)#^Z
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#wr
+Building configuration...
+[OK]
+Switch#sh
+Switch#show v
+Switch#show vl
+Switch#show vlan br
+Switch#show vlan brief 
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/9, Fa0/10
+                                                Fa0/11, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15, Fa0/16, Fa0/17, Fa0/18
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gig0/1, Gig0/2
+10   HR                               active    Fa0/3, Fa0/4, Fa0/5
+20   IT                               active    Fa0/6, Fa0/7, Fa0/8
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+Switch#int
+Switch#en
+Switch#enable 
+Switch#conf
+Switch#configure t
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int
+Switch(config)#interface r
+Switch(config)#interface range f
+Switch(config)#interface range fastEthernet 0/1-2
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport m
+Switch(config-if-range)#switchport mode t
+Switch(config-if-range)#switchport mode trunk 
+
+Switch(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport trunk
+Switch(config-if-range)#switchport trunk a
+Switch(config-if-range)#switchport trunk allowed v
+Switch(config-if-range)#switchport trunk allowed vlan 10,20
+Switch(config-if-range)#exit
+Switch(config)#ip dhcp pool HR
+Switch(dhcp-config)#network
+Switch(dhcp-config)#network 192.168.10.0 255.255.255.0
+Switch(dhcp-config)#de
+Switch(dhcp-config)#default-router 192.168.10.1
+Switch(dhcp-config)#sn
+Switch(dhcp-config)#dn
+Switch(dhcp-config)#dns-server 8.8.8.8
+Switch(dhcp-config)#exit
+Switch(config)#ip dhcp ex
+Switch(config)#ip dhcp excluded-address 192.168.10.1 192.168.10.5
+Switch(config)#ip dhcp pool IT
+Switch(dhcp-config)#net
+Switch(dhcp-config)#network 200.20.20.0 255.255.255.0
+Switch(dhcp-config)#de
+Switch(dhcp-config)#default-router 200.20.20.1
+Switch(dhcp-config)#dn
+Switch(dhcp-config)#dns-server 8.8.8.8
+Switch(dhcp-config)#exit
+Switch(config)#ip dhcp ex
+Switch(config)#ip dhcp excluded-address 200.20.20.1 200.20.20.5
+Switch(config)#in
+Switch(config)#interface vl
+Switch(config)#interface vlan 10
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan10, changed state to up
+
+Switch(config-if)#ip add
+Switch(config-if)#ip address 192.168.10.2 255.255.255.0
+Switch(config-if)#no sh
+Switch(config-if)#no shutdown 
+Switch(config-if)#exit
+Switch(config)#int
+Switch(config)#interface vl
+Switch(config)#interface vlan 20
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan20, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan20, changed state to up
+
+Switch(config-if)#ip add
+Switch(config-if)#ip address 200.20.20.2
+% Incomplete command.
+Switch(config-if)#ip add
+Switch(config-if)#ip address 200.20.20.2 255.255.255.0
+Switch(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+
+
+
+
+
+
+
+
+Switch con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+
+Router>en
+Router>enable 
+Router#conf
+Router#configure t
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int
+Router(config)#interface f
+Router(config)#interface g
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#no sh
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#exit
+Router(config)#int
+Router(config)#interface g
+Router(config)#interface gigabitEthernet 0/0. ?
+% Unrecognized command
+Router(config)#interface gigabitEthernet 0/0. ?
+% Unrecognized command
+Router(config)#interface gigabitEthernet 0/0. ?
+% Unrecognized command
+Router(config)#int
+Router(config)#interface g
+Router(config)#interface gigabitEthernet 0/0.?
+  <0-4294967295>  GigabitEthernet interface number
+Router(config)#interface gigabitEthernet 0/0.10
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.10, changed state to up
+
+Router(config-subif)#en
+Router(config-subif)#encapsulation d
+Router(config-subif)#encapsulation dot1Q 10
+Router(config-subif)#ip add
+Router(config-subif)#ip address 192.168.10.1 255.255.255.0
+Router(config-subif)#int
+Router(config-subif)#interface g
+Router(config-subif)#interface gigabitEthernet 0/0.20
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.20, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.20, changed state to up
+
+Router(config-subif)#en
+Router(config-subif)#encapsulation d
+Router(config-subif)#encapsulation dot1Q 20
+Router(config-subif)#ip ad
+Router(config-subif)#ip address 200.20.20.1 255.255.255.0
+Router(config-subif)#

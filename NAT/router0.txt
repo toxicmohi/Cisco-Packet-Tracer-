@@ -1,0 +1,60 @@
+static NAT = 1 private IP = 1 public IP (ex:60.0.0.1)
+
+Router(config)#ip nat
+Router(config)#ip nat in
+Router(config)#ip nat inside s
+Router(config)#ip nat inside source s
+Router(config)#ip nat inside source static 192.168.10.2 60.0.0.1
+Router(config)#int g 0/0
+Router(config-if)#int g 0/1
+Router(config-if)#ip nat out
+Router(config-if)#ip nat outside 
+
+
+PAT 
+pool means group - thats why same pc er jonno same ip dui bar dite hobe grp er jonno.
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip nat pool ABCD
+% Incomplete command.
+Router(config)#ip nat pool ABCD 60.0.0.2 60.0.0.2 net
+Router(config)#ip nat pool ABCD 60.0.0.2 60.0.0.2 netmask 255.0.0.0
+Router(config)#ip ac
+Router(config)#access-list 1 permit 192.168.10.8 0.0.0.7
+Router(config)#ip nat ins
+Router(config)#ip nat inside s
+Router(config)#ip nat inside source l
+Router(config)#ip nat inside source list 1
+Router(config)#ip nat inside source list 1 pool ABCD overload
+
+
+
+show ip nat translations
+
+
+2nd router###########################
+
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#ac
+Router(config)#access-list 101 t
+                               ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#access-list 101 d
+Router(config)#access-list 101 deny t
+Router(config)#access-list 101 deny tcp 192.168.10.2 0.0.0.0 200.20.20.4 0.0.0.0 eq www
+Router(config)#access-list 101 deny tcp 192.168.10.9 0.0.0.0 200.20.20.2 0.0.0.0 eq ftp
+Router(config)#int g
+% Incomplete command.
+Router(config)#ac
+Router(config)#access-list 101 permit
+Router(config)#access-list 101 permit ip any any
+Router(config)#int g 0/1
+Router(config-if)#ac
+Router(config-if)#ip ac
+Router(config-if)#ip access-group 101 out
+Router(config-if)#ip access-group 101 out 

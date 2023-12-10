@@ -1,0 +1,7 @@
+SW- 
+vlan 2 ta 
+vlan int ip dilam
+DHCP korlm
+
+Router - sub intface create korlam
+Encapsulation korlam (inter Vlan korlam)

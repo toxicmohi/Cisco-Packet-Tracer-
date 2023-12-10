@@ -1,0 +1,105 @@
+
+
+Switch>en
+Switch>enable 
+Switch#conf
+Switch#configure t
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vl
+Switch(config)#vlan 10
+Switch(config-vlan)#name HR
+Switch(config-vlan)#vl
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#name IT
+Switch(config-vlan)#exit
+Switch(config)#int
+Switch(config)#interface r
+Switch(config)#interface range f
+Switch(config)#interface range fastEthernet 0/2-4
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport m
+Switch(config-if-range)#switchport mode a
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport a
+Switch(config-if-range)#switchport access v
+Switch(config-if-range)#switchport access vlan 10
+Switch(config-if-range)#exit
+Switch(config)#int
+Switch(config)#interface r
+Switch(config)#interface range f
+Switch(config)#interface range fastEthernet 0/5-7
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport m
+Switch(config-if-range)#switchport mode a
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport a
+Switch(config-if-range)#switchport access v
+Switch(config-if-range)#switchport access vlan 20
+Switch(config-if-range)#%SPANTREE-2-RECV_PVID_ERR: Received 802.1Q BPDU on non trunk FastEthernet0/1 VLAN1.
+
+%SPANTREE-2-BLOCK_PVID_LOCAL: Blocking FastEthernet0/1 on VLAN0001. Inconsistent port type.
+
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+
+Switch>en
+Switch>enable 
+Switch#conf
+Switch#configure t
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int
+Switch(config)#interface vl
+Switch(config)#interface vlan 10
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan10, changed state to up
+
+Switch(config-if)#ip add
+Switch(config-if)#ip address 192.168.10.3 255.255.255.0
+Switch(config-if)#exit
+Switch(config)#int
+Switch(config)#interface vlan
+Switch(config)#interface vlan 20
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan20, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan20, changed state to up
+
+Switch(config-if)#ip ad
+Switch(config-if)#ip address 200.20.20.3 255.255.255.0
+Switch(config-if)#
+
+
+
+
+
+
+
+
+Switch con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
