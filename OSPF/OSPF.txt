@@ -1,0 +1,49 @@
+
+##########################################Dynamic Routing (OSPF)##################################
+ospf v1= experimental
+ospf v2 = ipv4
+ospf v2= ipv6
+
+
+
+
+Router>
+Router>en
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#rou
+Router(config)#router osp
+Router(config)#router ospf 10
+Router(config-router)#rou
+Router(config-router)#router-id 4.4.4.4
+Router(config-router)#net
+Router(config-router)#network 30.30.30.0 0.0.0.3 a
+Router(config-router)#network 30.30.30.0 0.0.0.3 area 0
+Router(config-router)#network 30.30.30.8 0.0.0.3 area 0
+01:18:16: %OSPF-5-ADJCHG: Process 10, Nbr 2.2.2.2 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+Router(config-router)#
+01:18:23: %OSPF-5-ADJCHG: Process 10, Nbr 3.3.3.3 on GigabitEthernet0/2 from LOADING to FULL, Loading Done
+
+Router(config-router)#network 40.40.40.0 0.0.0.3 area 2
+Router(config-router)#
+01:20:47: %OSPF-5-ADJCHG: Process 10, Nbr 5.5.5.5 on GigabitEthernet0/1 from LOADING to FULL, Loading Done
+
+
+
+
+###################################Virtual-link###################################
+Router>en
+Router#conf t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#rou
+Router(config)#router ospf
+Router(config)#router ospf 10
+Router(config-router)#ro
+Router(config-router)#router-id 6.6.6.6 
+Router(config-router)#net
+Router(config-router)#network 50.50.50.0 0.0.0.3 a
+Router(config-router)#network 50.50.50.0 0.0.0.3 area 3
+Router(config-router)#
+01:22:19: %OSPF-5-ADJCHG: Process 10, Nbr 5.5.5.5 on GigabitEthernet0/0 from LOADING to FULL, Loading Done

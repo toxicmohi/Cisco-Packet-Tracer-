@@ -1,0 +1,66 @@
+ISP(config)#no ip domain-lookup
+ISP(config)#banner motd #hi#
+ISP(config)#ena
+ISP(config)#enable se
+ISP(config)#enable secret 1234
+ISP(config)#line con
+ISP(config)#line vty 0 4
+ISP(config-line)#pas
+ISP(config-line)#password 1111
+ISP(config-line)#login
+ISP(config-line)#line con 0
+ISP(config-line)#pas
+ISP(config-line)#password 2222
+ISP(config-line)#login
+ISP(config-line)#loggi
+ISP(config-line)#logging sy
+ISP(config-line)#logging synchronous
+ISP(config-line)#exit
+ISP(config)#ser
+ISP(config)#service p
+ISP(config)#service pass
+ISP(config)#service password-encryption
+
+
+
+ISP(config)#username CustomerRouter pas
+ISP(config)#username CustomerRouter password 1234
+ISP(config)#ip local pool abcd 10.10.10.1 10.10.10.2
+ISP(config)#interfa
+ISP(config)#interface virtu
+ISP(config)#interface virtualtem
+ISP(config)#interface virtual tem
+ISP(config)#interface virtual-
+ISP(config)#interface virtual-t
+ISP(config)#interface virtual-tem
+ISP(config)#interface virtual-template 1
+ISP(config-if)#ip add
+ISP(config-if)#ip address 10.10.10.254 255.255.255.0
+ISP(config-if)#mtu 1492
+ISP(config-if)#peer
+ISP(config-if)#peer de
+ISP(config-if)#peer default ip
+ISP(config-if)#peer default ip add
+ISP(config-if)#peer default ip address  pool abcd
+ISP(config-if)#ppp aut
+ISP(config-if)#ppp authen
+ISP(config-if)#ppp authentication chap callin
+ISP(config-if)#exit
+ISP(config)#bba-
+ISP(config)#bba-group p
+ISP(config)#bba-group pppoe g
+ISP(config)#bba-group pppoe global
+ISP(config-bba-group)#
+*Mar  1 00:23:32.919: %LINK-3-UPDOWN: Interface Virtual-Access2, changed state to up
+*Mar  1 00:23:33.919: %LINEPROTO-5-UPDOWN: Line protocol on Interface Virtual-Access2, changed state to up
+ISP(config-bba-group)#virt
+ISP(config-bba-group)#virtual-template 1
+ISP(config-bba-group)#exit
+ISP(config)#int f
+ISP(config)#int fastEthernet 0/0
+ISP(config-if)#ppp
+ISP(config-if)#pppoe en
+ISP(config-if)#pppoe enable gr
+ISP(config-if)#pppoe enable group g
+ISP(config-if)#pppoe enable group global
+ISP(config-if)#no shut

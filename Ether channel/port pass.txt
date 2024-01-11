@@ -1,0 +1,80 @@
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#line vty 0 4
+Router(config-line)#pas
+Router(config-line)#password 1234
+Router(config-line)#login
+
+previlage mode passord
+Router(config)#enable se
+Router(config)#enable secret 7777
+
+
+
+
+SSH korte hobe ------------------------
+host name dite hobe
+vty port password dite hobe
+privilage mode pass dite hobe
+then
+#username RiFi
+Router(config)#username RiFi pas
+Router(config)#username RiFi password 2222
+Router(config)#ip doma
+Router(config)#ip domain-n
+Router(config)#ip domain-name 
+% Incomplete command.
+Router(config)#ip domain-name facebook.com
+Router(config)#cry
+Router(config)#crypto k
+Router(config)#crypto key g
+Router(config)#crypto key generate r
+Router(config)#crypto key generate rsa 
+% Please define a hostname other than Router.
+Router(config)#host name 
+Router(config)#host name RiFi
+                         ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#^Z
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#host nam
+Router(config)#hos
+Router(config)#hostname RiFi
+RiFi(config)#line vty 0 4
+RiFi(config-line)#ip domain-n
+RiFi(config-line)#ip domain-na
+RiFi(config-line)#ip domain-name
+RiFi(config-line)#ip domain-name facebook.com
+RiFi(config)#cry
+RiFi(config)#crypto k
+RiFi(config)#crypto key g
+RiFi(config)#crypto key generate 
+% Incomplete command.
+RiFi(config)#crypto key generate  r
+RiFi(config)#crypto key generate  rsa 
+The name for the keys will be: RiFi.facebook.com
+Choose the size of the key modulus in the range of 360 to 4096 for your
+  General Purpose Keys. Choosing a key modulus greater than 512 may take
+  a few minutes.
+
+How many bits in the modulus [512]: 
+% Generating 512 bit RSA keys, keys will be non-exportable...[OK]
+
+RiFi(config)#line vty 0-4
+*Mar 1 1:57:18.549: RSA key size needs to be at least 768 bits for ssh version 2
+*Mar 1 1:57:18.549: %SSH-5-ENABLED: SSH 1.5 has been enabled
+                      ^
+% Invalid input detected at '^' marker.
+	
+RiFi(config)#line vty 0 4
+RiFi(config-line)#tran
+RiFi(config-line)#transport in
+RiFi(config-line)#transport input ssh
+RiFi(config-line)#transport input ssh 

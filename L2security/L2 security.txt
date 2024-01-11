@@ -1,0 +1,41 @@
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int f
+Switch(config)#int fastEthernet 0/2
+Switch(config-if)#sw
+Switch(config-if)#switchport m
+Switch(config-if)#switchport mode a
+Switch(config-if)#switchport mode access 
+Switch(config-if)#sw
+Switch(config-if)#switchport p
+Switch(config-if)#switchport po
+Switch(config-if)#switchport port-security 
+Switch(config-if)#switchport port-security max
+Switch(config-if)#switchport port-security maximum 3
+Switch(config-if)#switchport port-security mac 0006.2A8B.5768
+Switch(config-if)#switchport port-security mac
+Switch(config-if)#switchport port-security mac-address 0006.2A8B.5768
+Switch(config-if)#switchport port-security mac-address 0006.2A48.DDAE
+Switch(config-if)#switchport port-security v
+Switch(config-if)#switchport port-security violation protect
+Switch(config-if)#ex
+Switch(config)#^Z
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#
+Switch#sho
+Switch#show mac
+Switch#show mac-ad
+Switch#show mac-address-table 
+
+Switch#show po
+Switch#show port-security 
+
+Switch#sh
+Switch#show po
+Switch#show port-security int
+Switch#show port-security interface f
+Switch#show port-security interface fastEthernet 0/2
+

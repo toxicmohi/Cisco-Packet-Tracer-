@@ -1,0 +1,24 @@
+Switch(config)#int fastEthernet 0/3
+Switch(config-if)#sw
+Switch(config-if)#switchport m
+Switch(config-if)#switchport mode A
+Switch(config-if)#switchport mode Access 
+Switch(config-if)#SW
+Switch(config-if)#SWitchport PO
+Switch(config-if)#SWitchport POrt-security 
+Switch(config-if)#SW
+Switch(config-if)#SWitchport PO
+Switch(config-if)#SWitchport POrt-security MAX 
+Switch(config-if)#SWitchport POrt-security MAX 3
+Switch(config-if)#SWitchport POrt-security max
+Switch(config-if)#SWitchport POrt-security maximum 3
+Switch(config-if)#sw
+Switch(config-if)#SWitchport POrt-security mac-ad
+Switch(config-if)#SWitchport POrt-security mac-address sticky
+Switch(config-if)#SWitchport POrt-security mac-address sticky 
+Switch(config-if)#sw
+Switch(config-if)#switchport p
+Switch(config-if)#switchport po
+Switch(config-if)#switchport port-security v
+Switch(config-if)#switchport port-security violation r
+Switch(config-if)#switchport port-security violation restrict

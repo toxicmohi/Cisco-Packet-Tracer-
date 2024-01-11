@@ -1,0 +1,10 @@
+SWITCH E LOAD BALANCE KORTESI ETAR NAM EATHER CHANNEL
+
+
+1TA CHANNEL E MINIMUM 2 TA CABLE AND MAX 7 TA CABLE 
+SWITCH E 
+
+
+PROTOCOL 2 TA 
+PAgP = 2 ta cisco device hoite hobe protocol korte hobe
+LACP = j kono vendor er device e protocol use korte parbe

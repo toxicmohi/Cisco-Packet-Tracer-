@@ -1,0 +1,7 @@
+1. pre requsit = router hostname lagbe and pass lagbe shob kisur encry hoite hobe
+2. log server enable korte hobe both end e
+3. isp e router user name banailam customer router name e
+4.pool create korsi
+5.virtu int  
+6.band set korlam
+7. authentication kore dilam 
