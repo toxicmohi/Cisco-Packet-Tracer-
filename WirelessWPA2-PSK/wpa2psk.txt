@@ -1,0 +1,61 @@
+suppose network 192.168.10.0/24
+so...
+Router/Gateway: 192.168.10.1
+WLC : 192.168.10.2
+Server: 192.168.10.3
+
+
+#	Server e Ip and defualt gateway dibo
+
+#	Static ip config in server. 
+	Server->Services->DHCP-> 	1->service on	2->Pool Name:Wireless (ei nam ekta dilei hoilo)    
+					3->Gateway: 192.168.10.3	4->DNS:8.8.8.8 	5->WLC IP:192.168.10.2	 &last Save
+#	WLC IP config korte hobe.
+	Management-> IP:192.168.10.2 	-> Gateway	->DNS	
+
+#	DHCP Configuration in Server so.... 
+		Now we will configure IP Address in Router Interface:
+Router>en
+Router#conf t
+Router(config)#int g0/0
+Router(config-if)#no shut
+Router(config-if)#ip address dhcp 
+
+then PC te giye DHCP IP check korte hobe.
+
+#	Now we will go for Configuring WLAN using WPA2 PSK and AAA using the GUI.
+
+	Go to Web Browser of  PC and type WLC IP Address (192.168.10.2) then hit enter
+
+----> ekta Page ashbe Cisco theke then	1.admin	2.Admin1234	3.Admin1234	4.Start
+
+#	System Name->WiFi_controller	->ManagementIp:192.168.10.2 	->Gateway 	->subnet mask 	->Next
+#	Network Name-> RiFi	Security-> WPA2 Personal	Passphare->RiFi@001	->RiFi@001
+	Network Name is => SSID
+
+#	RF Parameter Optimization er page ashbe oita kichu na kore just Next
+
+#	After Press Apply, The system will reboot
+Now close the browser and open again. Now you have to browse WLC Device using ######https not http######.
+that means go admin pc then web browse https://192.168.10.2 
+
+# https://192.168.10.2 then login 	
+	
+=>Username: admin	Pass: Admin1234
+
+#	LAP-PT	->adapter connect korte hobe	->DHCP IP check korte hobe 	->DHCP 0.0.0.0 ashleo no problem. 
+
+#	SmartPhone -> Config -> Wireless -> SSID=>RiFi	->WPA2-PSK	->Passphare->RiFi@001	->IP=>DHCP
+
+IF DHCP IP is good then it will connect Automatic.
+
+
+
+
+
+
+
+
+#############################AAAAAAAAAAAAAAAAAAAAAAA################################
+
+AAA korbo ekhon
